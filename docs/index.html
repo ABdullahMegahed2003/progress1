@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تقدم | تحميل التطبيق</title>
+    <meta
+      name="description"
+      content="تحميل تطبيق تقدم APK بسهولة على الهاتف."
+    />
+    <style>
+      :root {
+        --bg: #0b1220;
+        --panel: #111c2f;
+        --panel-2: #162744;
+        --primary: #51d0a6;
+        --primary-2: #78e1b8;
+        --text: #ecf3ff;
+        --muted: #aab9d1;
+        --shadow: rgba(0, 0, 0, 0.25);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, sans-serif;
+        background: linear-gradient(135deg, #07111e 0%, #0f1b2d 100%);
+        color: var(--text);
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+
+      .container {
+        width: min(92vw, 760px);
+        background: rgba(17, 28, 47, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 24px;
+        box-shadow: 0 22px 60px var(--shadow);
+        overflow: hidden;
+      }
+
+      .hero {
+        padding: 32px 24px 18px;
+        text-align: center;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(81, 208, 166, 0.12);
+        color: var(--primary-2);
+        font-weight: 700;
+        font-size: 14px;
+        border: 1px solid rgba(81, 208, 166, 0.35);
+      }
+
+      h1 {
+        margin: 18px 0 12px;
+        font-size: clamp(2rem, 3vw, 3.2rem);
+        line-height: 1.2;
+      }
+
+      .subtitle {
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.8;
+        margin: 0 auto 24px;
+        max-width: 620px;
+      }
+
+      .actions {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 16px 24px;
+        border-radius: 14px;
+        text-decoration: none;
+        font-weight: 800;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+      }
+
+      .button.primary {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
+        color: #062515;
+      }
+
+      .button.secondary {
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: rgba(255, 255, 255, 0.02);
+        color: var(--text);
+      }
+
+      .info {
+        padding: 0 24px 28px;
+      }
+
+      .card {
+        background: rgba(22, 39, 68, 0.72);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 18px;
+        padding: 22px;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .feature {
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(255,255,255,0.04);
+        border-radius: 14px;
+        padding: 16px;
+      }
+
+      .feature h3 {
+        margin: 0 0 8px;
+        font-size: 1.02rem;
+      }
+
+      .feature p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.8;
+        font-size: 0.95rem;
+      }
+
+      .note {
+        margin-top: 18px;
+        padding: 16px 18px;
+        border-radius: 12px;
+        background: rgba(81, 208, 166, 0.08);
+        border: 1px solid rgba(81, 208, 166, 0.2);
+        color: var(--text);
+        line-height: 1.8;
+      }
+
+      @media (max-width: 560px) {
+        .hero { padding: 28px 16px 14px; }
+        .info { padding: 0 16px 20px; }
+        .button { width: 100%; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <section class="hero">
+        <div class="badge">تطبيق تقدم</div>
+        <h1>حمّل التطبيق بسهولة من هاتفك</h1>
+        <p class="subtitle">
+          تطبيق عربي يساعدك على متابعة التمارين، التقدم اليومي، والخطط التدريبية
+          بكل سهولة ووضوح.
+        </p>
+
+        <div class="actions">
+          <a class="button primary" href="./app-release.apk" download>
+            تحميل APK
+          </a>
+          <a class="button secondary" href="https://github.com/" target="_blank" rel="noreferrer">
+            GitHub المشروع
+          </a>
+        </div>
+      </section>
+
+      <section class="info">
+        <div class="card">
+          <div class="features">
+            <div class="feature">
+              <h3>سهولة الاستخدام</h3>
+              <p>واجهة بسيطة ومريحة للهواتف المحمولة.</p>
+            </div>
+            <div class="feature">
+              <h3>متابعة التقدم</h3>
+              <p>عرض كل التغييرات اليومية فيWorkout وProgress.</p>
+            </div>
+            <div class="feature">
+              <h3>تجهيز بسيط</h3>
+              <p>يتم تثبيت النسخة مباشرة عبر ملف APK.</p>
+            </div>
+          </div>
+
+          <div class="note">
+            ملاحظة: ضع ملف APK الحقيقي داخل مجلد docs باسم app-release.apk، بعد ذلك
+            سيصبح رابط التحميل مباشرًا للجميع من الهاتف.
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
