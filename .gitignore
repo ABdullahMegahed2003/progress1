@@ -16,3 +16,9 @@
 local.properties
 .env
 debug.keystore
+
+# Next.js landing page
+landing/node_modules/
+landing/.next/
+landing/out/
+landing/package-lock.json
