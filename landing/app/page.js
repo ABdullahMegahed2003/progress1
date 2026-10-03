@@ -45,7 +45,7 @@ export default function HomePage() {
         </div>
 
         <div className="cta-row">
-          <a href="./app-release.apk" className="primary-btn" download>
+          <a href="/app-release.apk" className="primary-btn" download>
             تحميل التطبيق
           </a>
           <a href="#features" className="secondary-btn">
