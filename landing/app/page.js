@@ -45,7 +45,10 @@ export default function HomePage() {
         </div>
 
         <div className="cta-row">
-          <a href="/app-release.apk" className="primary-btn" download>
+          <a
+            href="https://github.com/ABdullahMegahed2003/progress1/releases/download/apk-latest/taqadom.apk"
+            className="primary-btn"
+          >
             تحميل التطبيق
           </a>
           <a href="#features" className="secondary-btn">
