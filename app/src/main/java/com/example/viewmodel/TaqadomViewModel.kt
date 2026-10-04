@@ -22,6 +22,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
@@ -34,7 +35,7 @@ class TaqadomViewModel(application: Application) : AndroidViewModel(application)
     val repository = TaqadomRepository(application)
 
     val currentUser: StateFlow<User?> = repository.currentUserFlow
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), null)
+        .stateIn(viewModelScope, SharingStarted.Eagerly, null)
 
     // Current navigation state
     private val _currentScreen = MutableStateFlow("splash") // splash, login, register, onboarding, main, plan_setup
@@ -127,8 +128,7 @@ class TaqadomViewModel(application: Application) : AndroidViewModel(application)
 
     private fun checkSession() {
         viewModelScope.launch {
-            delay(300)
-            val user = currentUser.value
+            val user = repository.currentUserFlow.first()
             if (user != null && user.isLoggedIn) {
                 _selectedSplitId.value = user.plan
                 if (!user.onboardingCompleted) {
@@ -212,8 +212,9 @@ class TaqadomViewModel(application: Application) : AndroidViewModel(application)
     }
 
     fun completeOnboarding() {
-        val user = currentUser.value ?: return
         viewModelScope.launch {
+            val user = repository.currentUserFlow.first { it?.isLoggedIn == true }
+            if (user == null) return@launch
             repository.completeOnboarding(user.id)
             _currentScreen.value = "main"
         }

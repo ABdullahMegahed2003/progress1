@@ -237,7 +237,7 @@ fun OnboardingScreen(viewModel: TaqadomViewModel) {
             // Bottom Actions
             Column(modifier = Modifier.fillMaxWidth()) {
                 TaqadomButton(
-                    text = if (currentStepIndex == steps.size - 1) "ابدأ الآن 🚀" else "التالي",
+                    text = if (currentStepIndex == steps.size - 1) "ابدأ الآن" else "التالي",
                     onClick = {
                         if (currentStepIndex < steps.size - 1) {
                             currentStepIndex++
